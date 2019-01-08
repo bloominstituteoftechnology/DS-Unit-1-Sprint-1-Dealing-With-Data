@@ -12,8 +12,8 @@ What is this thing called data? Measuring and quantifying reality is a powerful 
 Most computational devices generate and process data, but not all data is represented, stored, or transported in the same way. In this module we’ll consider the common ways of actually getting our hands on data, and practice with some real-world examples.
 
 #### Objectives:
-Student should be able to load data from multiple sources into a Python notebook
-Student should be able to clean a dataset using common Python libraries
+* Student should be able to load data from multiple sources into a Python notebook
+* Student should be able to clean a dataset using common Python libraries
 
 ## Basic Data Visualizations
 Once data is loaded, a good first step is to look at it - our software usually gives us summary statistics, but it’s nice to also visualize what is going on.
@@ -23,7 +23,7 @@ Once data is loaded, a good first step is to look at it - our software usually g
 * Student should be able to create basic plots appropriate for different data types
 
 ## Making data-backed assertions
-* Our goal in presenting data is to use it as evidence in support of appropriate beliefs, statements, or policies. This is a large topic and can employ many advanced techniques - but getting started doesn’t have to be fancy.
+Our goal in presenting data is to use it as evidence in support of appropriate beliefs, statements, or policies. This is a large topic and can employ many advanced techniques - but getting started doesn’t have to be fancy.
 
 #### Objectives:
 * Student should be able to infer and support statements based on data
