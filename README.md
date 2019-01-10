@@ -39,8 +39,14 @@ Our goal in presenting data is to use it as evidence in support of appropriate b
 * Don't Repeat Yourself vs. Write Everything Twice
 * Colaboratory
   * `!` prefix to enter bash shell commands, access underlying file system, e.g. `!unzip file.zip`, `pip install pandas`, `!curl` `!wget`, `!ls`, etc.
-  * same as ipython: `?` for docs, `??` for source code
+  * same as ipython: `?` for docs, `??` for source code, also `help()` as usual
   * GitHub integration is slick, but blending in cloud infrastructure complicates my local file workflow
 * [A gallery of interesting Jupyter Notebooks](https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-Notebooks) has some dated stuff with inaccessbile datasets
+* method vs. property
+* recursive solution to 
+
+# Things to Check Out
+* https://www.getpostman.com/
+* `datashader` for heatmaps
 
 # Questions
