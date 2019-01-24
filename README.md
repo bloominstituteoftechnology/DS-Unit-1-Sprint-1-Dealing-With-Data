@@ -1,5 +1,4 @@
 ###### Unit 1: Descriptive Statistics, Sprint 1: Dealing With Data
-Notebooks, assignments, and sprint challenge for Data Science Unit 1 Sprint 1
 
 ## A First Look at Data
 What is this thing called data? Measuring and quantifying reality is a powerful concept, but saying “everything is data!” is perhaps not the most useful way to understand it. Data must be specific and well-defined in order to be comprehensible.
