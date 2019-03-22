@@ -1,0 +1,304 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "LS_DS_111_A_First_Look_at_Data.ipynb",
+      "version": "0.3.2",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Jeffrowetull/DS-Unit-1-Sprint-1-Dealing-With-Data/blob/master/Jeff%20Rowe%20-%20A%20first%20look%20at%20data\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "Okfr_uhwhS1X",
+        "colab_type": "text"
+      },
+      "cell_type": "markdown",
+      "source": [
+        "# Lambda School Data Science - A First Look at Data\n",
+        "\n"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "9dtJETFRhnOG",
+        "colab_type": "text"
+      },
+      "cell_type": "markdown",
+      "source": [
+        "## Lecture - let's explore Python DS libraries and examples!\n",
+        "\n",
+        "The Python Data Science ecosystem is huge. You've seen some of the big pieces - pandas, scikit-learn, matplotlib. What parts do you want to see more of?"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "WiBkgmPJhmhE",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "# TODO - we'll be doing this live, taking requests\n",
+        "# and reproducing what it is to look up and learn things\n",
+        "print('Hello there!')"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "lOqaPds9huME",
+        "colab_type": "text"
+      },
+      "cell_type": "markdown",
+      "source": [
+        "## Assignment - now it's your turn\n",
+        "\n",
+        "Pick at least one Python DS library, and using documentation/examples reproduce in this notebook something cool. It's OK if you don't fully understand it or get it 100% working, but do put in effort and look things up."
+      ]
+    },
+    {
+      "metadata": {
+        "id": "TGUS79cOhPWj",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 1023
+        },
+        "outputId": "e089d6b7-8cc8-4aea-9b19-ad288f614e1f"
+      },
+      "cell_type": "code",
+      "source": [
+        "# TODO - your code here\n",
+        "# Use what we did live in lecture as an example\n",
+        "!pip install Scrapy\n"
+      ],
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Collecting Scrapy\n",
+            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/3e/45/414e87ac8209d537c91575538c5307c20217a6943f555e0ee39f6db4bb0f/Scrapy-1.6.0-py2.py3-none-any.whl (231kB)\n",
+            "\u001b[K    100% |████████████████████████████████| 235kB 11.7MB/s \n",
+            "\u001b[?25hCollecting Twisted>=13.1.0 (from Scrapy)\n",
+            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/5d/0e/a72d85a55761c2c3ff1cb968143a2fd5f360220779ed90e0fadf4106d4f2/Twisted-18.9.0.tar.bz2 (3.1MB)\n",
+            "\u001b[K    100% |████████████████████████████████| 3.1MB 1.9MB/s \n",
+            "\u001b[?25hCollecting cssselect>=0.9 (from Scrapy)\n",
+            "  Downloading https://files.pythonhosted.org/packages/7b/44/25b7283e50585f0b4156960691d951b05d061abf4a714078393e51929b30/cssselect-1.0.3-py2.py3-none-any.whl\n",
+            "Collecting parsel>=1.5 (from Scrapy)\n",
+            "  Downloading https://files.pythonhosted.org/packages/96/69/d1d5dba5e4fecd41ffd71345863ed36a45975812c06ba77798fc15db6a64/parsel-1.5.1-py2.py3-none-any.whl\n",
+            "Collecting pyOpenSSL (from Scrapy)\n",
+            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/01/c8/ceb170d81bd3941cbeb9940fc6cc2ef2ca4288d0ca8929ea4db5905d904d/pyOpenSSL-19.0.0-py2.py3-none-any.whl (53kB)\n",
+            "\u001b[K    100% |████████████████████████████████| 61kB 20.5MB/s \n",
+            "\u001b[?25hCollecting queuelib (from Scrapy)\n",
+            "  Downloading https://files.pythonhosted.org/packages/4c/85/ae64e9145f39dd6d14f8af3fa809a270ef3729f3b90b3c0cf5aa242ab0d4/queuelib-1.5.0-py2.py3-none-any.whl\n",
+            "Requirement already satisfied: six>=1.5.2 in /usr/local/lib/python3.6/dist-packages (from Scrapy) (1.11.0)\n",
+            "Requirement already satisfied: lxml in /usr/local/lib/python3.6/dist-packages (from Scrapy) (4.2.6)\n",
+            "Collecting w3lib>=1.17.0 (from Scrapy)\n",
+            "  Downloading https://files.pythonhosted.org/packages/81/43/9dcf92a77f5f0afe4f4df2407d7289eea01368a08b64bda00dd318ca62a6/w3lib-1.20.0-py2.py3-none-any.whl\n",
+            "Collecting PyDispatcher>=2.0.5 (from Scrapy)\n",
+            "  Downloading https://files.pythonhosted.org/packages/cd/37/39aca520918ce1935bea9c356bcbb7ed7e52ad4e31bff9b943dfc8e7115b/PyDispatcher-2.0.5.tar.gz\n",
+            "Collecting service-identity (from Scrapy)\n",
+            "  Downloading https://files.pythonhosted.org/packages/e9/7c/2195b890023e098f9618d43ebc337d83c8b38d414326685339eb024db2f6/service_identity-18.1.0-py2.py3-none-any.whl\n",
+            "Collecting zope.interface>=4.4.2 (from Twisted>=13.1.0->Scrapy)\n",
+            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/19/17/1d198a6aaa9aa4590862fe3d3a2ed7dd808050cab4eebe8a2f2f813c1376/zope.interface-4.6.0-cp36-cp36m-manylinux1_x86_64.whl (167kB)\n",
+            "\u001b[K    100% |████████████████████████████████| 174kB 28.8MB/s \n",
+            "\u001b[?25hCollecting constantly>=15.1 (from Twisted>=13.1.0->Scrapy)\n",
+            "  Downloading https://files.pythonhosted.org/packages/b9/65/48c1909d0c0aeae6c10213340ce682db01b48ea900a7d9fce7a7910ff318/constantly-15.1.0-py2.py3-none-any.whl\n",
+            "Collecting incremental>=16.10.1 (from Twisted>=13.1.0->Scrapy)\n",
+            "  Downloading https://files.pythonhosted.org/packages/f5/1d/c98a587dc06e107115cf4a58b49de20b19222c83d75335a192052af4c4b7/incremental-17.5.0-py2.py3-none-any.whl\n",
+            "Collecting Automat>=0.3.0 (from Twisted>=13.1.0->Scrapy)\n",
+            "  Downloading https://files.pythonhosted.org/packages/a3/86/14c16bb98a5a3542ed8fed5d74fb064a902de3bdd98d6584b34553353c45/Automat-0.7.0-py2.py3-none-any.whl\n",
+            "Collecting hyperlink>=17.1.1 (from Twisted>=13.1.0->Scrapy)\n",
+            "  Downloading https://files.pythonhosted.org/packages/a7/b6/84d0c863ff81e8e7de87cff3bd8fd8f1054c227ce09af1b679a8b17a9274/hyperlink-18.0.0-py2.py3-none-any.whl\n",
+            "Collecting PyHamcrest>=1.9.0 (from Twisted>=13.1.0->Scrapy)\n",
+            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/9a/d5/d37fd731b7d0e91afcc84577edeccf4638b4f9b82f5ffe2f8b62e2ddc609/PyHamcrest-1.9.0-py2.py3-none-any.whl (52kB)\n",
+            "\u001b[K    100% |████████████████████████████████| 61kB 21.8MB/s \n",
+            "\u001b[?25hRequirement already satisfied: attrs>=17.4.0 in /usr/local/lib/python3.6/dist-packages (from Twisted>=13.1.0->Scrapy) (19.1.0)\n",
+            "Collecting cryptography>=2.3 (from pyOpenSSL->Scrapy)\n",
+            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/5b/12/b0409a94dad366d98a8eee2a77678c7a73aafd8c0e4b835abea634ea3896/cryptography-2.6.1-cp34-abi3-manylinux1_x86_64.whl (2.3MB)\n",
+            "\u001b[K    100% |████████████████████████████████| 2.3MB 12.0MB/s \n",
+            "\u001b[?25hRequirement already satisfied: pyasn1-modules in /usr/local/lib/python3.6/dist-packages (from service-identity->Scrapy) (0.2.4)\n",
+            "Requirement already satisfied: pyasn1 in /usr/local/lib/python3.6/dist-packages (from service-identity->Scrapy) (0.4.5)\n",
+            "Requirement already satisfied: setuptools in /usr/local/lib/python3.6/dist-packages (from zope.interface>=4.4.2->Twisted>=13.1.0->Scrapy) (40.8.0)\n",
+            "Requirement already satisfied: idna>=2.5 in /usr/local/lib/python3.6/dist-packages (from hyperlink>=17.1.1->Twisted>=13.1.0->Scrapy) (2.6)\n",
+            "Requirement already satisfied: cffi!=1.11.3,>=1.8 in /usr/local/lib/python3.6/dist-packages (from cryptography>=2.3->pyOpenSSL->Scrapy) (1.12.2)\n",
+            "Collecting asn1crypto>=0.21.0 (from cryptography>=2.3->pyOpenSSL->Scrapy)\n",
+            "\u001b[?25l  Downloading https://files.pythonhosted.org/packages/ea/cd/35485615f45f30a510576f1a56d1e0a7ad7bd8ab5ed7cdc600ef7cd06222/asn1crypto-0.24.0-py2.py3-none-any.whl (101kB)\n",
+            "\u001b[K    100% |████████████████████████████████| 102kB 23.7MB/s \n",
+            "\u001b[?25hRequirement already satisfied: pycparser in /usr/local/lib/python3.6/dist-packages (from cffi!=1.11.3,>=1.8->cryptography>=2.3->pyOpenSSL->Scrapy) (2.19)\n",
+            "Building wheels for collected packages: Twisted, PyDispatcher\n",
+            "  Building wheel for Twisted (setup.py) ... \u001b[?25ldone\n",
+            "\u001b[?25h  Stored in directory: /root/.cache/pip/wheels/57/2e/89/11ba83bc08ac30a5e3a6005f0310c78d231b96a270def88ca0\n",
+            "  Building wheel for PyDispatcher (setup.py) ... \u001b[?25ldone\n",
+            "\u001b[?25h  Stored in directory: /root/.cache/pip/wheels/88/99/96/cfef6665f9cb1522ee6757ae5955feedf2fe25f1737f91fa7f\n",
+            "Successfully built Twisted PyDispatcher\n",
+            "Installing collected packages: zope.interface, constantly, incremental, Automat, hyperlink, PyHamcrest, Twisted, cssselect, w3lib, parsel, asn1crypto, cryptography, pyOpenSSL, queuelib, PyDispatcher, service-identity, Scrapy\n",
+            "Successfully installed Automat-0.7.0 PyDispatcher-2.0.5 PyHamcrest-1.9.0 Scrapy-1.6.0 Twisted-18.9.0 asn1crypto-0.24.0 constantly-15.1.0 cryptography-2.6.1 cssselect-1.0.3 hyperlink-18.0.0 incremental-17.5.0 parsel-1.5.1 pyOpenSSL-19.0.0 queuelib-1.5.0 service-identity-18.1.0 w3lib-1.20.0 zope.interface-4.6.0\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "EvtzhqMAmmOd",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "cell_type": "code",
+      "source": [
+        "import scrapy \n",
+        "\n",
+        "\n",
+        "class QuotesSpider(scrapy.Spider):\n",
+        "    name = \"quotes\" #must be unique\n",
+        "\n",
+        "    def start_requests(self):\n",
+        "        url = 'http://quotes.toscrape.com/' #where the spider is scraping from\n",
+        "        tag = getattr(self, 'tag', None)\n",
+        "        if tag is not None:\n",
+        "            url = url + 'tag/' + tag #setting up the pages for the parse?\n",
+        "        yield scrapy.Request(url, self.parse)\n",
+        "\n",
+        "    def parse(self, response): #describe and separate the scraped data to make it useful  \n",
+        "        for quote in response.css('div.quote'):\n",
+        "            yield {\n",
+        "                'text': quote.css('span.text::text').get(),\n",
+        "                'author': quote.css('small.author::text').get(),#from whatever we got with the start_requests function\n",
+        "                #,within the div \"quote\", find the span with class text and the small (what's a small?) with the class author\n",
+        "                #, both of which should be a string (I'm equating text with a string here)\n",
+        "                \n",
+        "                #this could be changed with the replacement of get() with the method re() in order to use a regular\n",
+        "                #expression. \n",
+        "                'tags': quote.css('div.tags a.tag::text').getall() #This one is different from the other two because \n",
+        "                # the tags themselves are within the div tags so I have to include that\n",
+        "            }\n",
+        "\n",
+        "        next_page = response.css('li.next a::attr(href)').get() #go to the next page\n",
+        "        if next_page is not None: \n",
+        "            yield response.follow(next_page, self.parse) #if the page isn't blank, parse said page\n",
+        "            #The next thing I would love to do with the scraped data is to put it into a dataframe so that I can\n",
+        "            #do things with it.The tutorial does mention storing the data in a JSON Lines format, but I don't have\n",
+        "            # a clue what that is or how it would interact with Colab. I suppose that if Colab recognizes the JL filetype\n",
+        "            #, then I could just pull the file up like I did in the precourse. I wonder If I would have to reformat \n",
+        "            #the data into columns and such. The tutorial doesn't have much to say on the matter.\n",
+        "            "
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "metadata": {
+        "id": "ZJK01iOvtcxW",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 129
+        },
+        "outputId": "cbcb47ba-c8ec-4f44-97e8-aa155f7c5f3a"
+      },
+      "cell_type": "code",
+      "source": [
+        "scrapy crawl quotes"
+      ],
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "SyntaxError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;36m  File \u001b[0;32m\"<ipython-input-5-1b715e474854>\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    scrapy crawl quotes\u001b[0m\n\u001b[0m               ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+          ]
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "id": "BT9gdS7viJZa",
+        "colab_type": "text"
+      },
+      "cell_type": "markdown",
+      "source": [
+        "### Assignment questions\n",
+        "\n",
+        "After you've worked on some code, answer the following questions in this text block:\n",
+        "\n",
+        "1.  Describe in a paragraph of text what you did and why, as if you were writing an email to somebody interested but nontechnical.\n",
+        "\n",
+        "2.  What was the most challenging part of what you did?\n",
+        "\n",
+        "3.  What was the most interesting thing you learned?\n",
+        "\n",
+        "4.  What area would you like to explore with more time?\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "Zv8TMhYEpF96",
+        "colab_type": "text"
+      },
+      "cell_type": "markdown",
+      "source": [
+        "1. I copied \"Python DS libraries\" from the first section of this assignment. Then I put that into google and found a blog article that touted itself as the top 20 libraries for data science. \n",
+        "\n",
+        "I looked through the list, seeing popular libraries like numpy, pandas, and matplotlib. When I got to matplotlib, I noticed it was under the category of visualization. I looked back at pandas and numpy and saw that they were under core statistics. I was intrigued by these categories and looked through them instead of the libraries themselves.\n",
+        "\n",
+        "The libraries I found were core libraries/statistics, visualization, machine learning (where I found scikitlearn), deep learning, distributed deep learning, natural language processing, and data scraping. I was at first attracted to natural language processing and looked up the library eli5. I thought perhaps it had something to do with the subreddit of the same name but this was absolutely not the case. I concluded that the \"natural\" in nlp referred to computer's natural language and had nothing to do with human languages as I had first presumed.\n",
+        "\n",
+        "Then I got to scraping, the last of the list. It only had one library called Scrapy. Of all the topics mentioned in the article, I had known about scraping the longest, albeit vaguely. I figured such a library would definitely prove useful because data won't always present itself in a nice file format. I would need to go out and get it, or rather automate a process to go get it for me because I'm not going to do that by hand.\n",
+        "\n",
+        "The link brought me to a tutorial that began with building my own scraper. It described how the scraper might go through a webpage gathering specific data that may be desireable. \n",
+        "\n",
+        "2. The spider won't actually run for me so I can't really tell whether I am doing anything wrong. \n",
+        "\n",
+        "3. I can search for specific data using regular expressions\n",
+        "\n",
+        "4. I would like to know whether the data that is scraped comes in a nice format like the dataframes that I was using in the precourse or whether I would have to manipulate it to make it readable."
+      ]
+    },
+    {
+      "metadata": {
+        "id": "_XXg2crAipwP",
+        "colab_type": "text"
+      },
+      "cell_type": "markdown",
+      "source": [
+        "## Stretch goals and resources\n",
+        "\n",
+        "Following are *optional* things for you to take a look at. Focus on the above assignment first, and make sure to commit and push your changes to GitHub (and since this is the first assignment of the sprint, open a PR as well).\n",
+        "\n",
+        "- [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/)\n",
+        "- [scikit-learn documentation](http://scikit-learn.org/stable/documentation.html)\n",
+        "- [matplotlib documentation](https://matplotlib.org/contents.html)\n",
+        "- [Awesome Data Science](https://github.com/bulutyazilim/awesome-datascience) - a list of many types of DS resources\n",
+        "\n",
+        "Stretch goals:\n",
+        "\n",
+        "- Find and read blogs, walkthroughs, and other examples of people working through cool things with data science - and share with your classmates!\n",
+        "- Write a blog post (Medium is a popular place to publish) introducing yourself as somebody learning data science, and talking about what you've learned already and what you're excited to learn more about."
+      ]
+    }
+  ]
+}
