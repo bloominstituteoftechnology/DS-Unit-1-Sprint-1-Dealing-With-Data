@@ -1,0 +1,77 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled5.ipynb",
+      "version": "0.3.2",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/jtkernan7/DS-Unit-1-Sprint-1-Dealing-With-Data/blob/master/JT%20Kernan%20stretch%20goal%20sprint%201\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "metadata": {
+        "id": "dTLi1xuxtUd2",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 87
+        },
+        "outputId": "24703686-ce07-4ea9-dd81-2077c3e52752"
+      },
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "\n",
+        "\n",
+        "growMart = { 'name': 'Grow Mart', 'revenue': 265000, 'expenses': 183000 }\n",
+        "plantDepot = { 'name': 'Plant Depot', 'revenue': 302000, 'expenses': 240000 }\n",
+        "treesR = { 'name': 'Trees'R'Us', 'revenue': 123000, 'expenses': 130000 }\n",
+        "shops = [growMart, plantDepot, treesR]\n",
+        "\n",
+        "df = pd.DataFrame.from_records (shops)\n",
+        "\n",
+        "\n",
+        "\n",
+        "df['profit'] = df['revenue'] - df['expenses']\n",
+        "\n",
+        "\n",
+        "\n",
+        "df['is_profitable'] = np.where(df['profit']>0, 'yes', 'no')\n",
+        "\n",
+        "print(df.head())\n",
+        "\n"
+      ],
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "   expenses         name  revenue  profit is_profitable\n",
+            "0    183000    Grow Mart   265000   82000           yes\n",
+            "1    240000  Plant Depot   302000   62000           yes\n",
+            "2    130000      TreesUs   123000   -7000            no\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    }
+  ]
+}
