@@ -102,3 +102,15 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+.config/
+
+.ipython/
+
+.local/
+
+.DS_Store
+.bash_logout
+.bashrc
+.gitconfig
+.profile
