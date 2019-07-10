@@ -1,4 +1,4 @@
-pandas
+pandas==0.23.4
 numpy
 matplotlib
 seaborn
