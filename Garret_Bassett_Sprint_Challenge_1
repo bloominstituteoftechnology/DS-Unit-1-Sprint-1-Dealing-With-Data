@@ -118,7 +118,7 @@
         "- What is at least one feature that looks to have a negative relationship with survival?\n",
         "- How are those two features related with each other, and what might that mean?\n",
         "\n",
-        "Answer with text, but feel free to intersperse example code/results or refer to it from earlier."
+        "Answer with text, but feel free to intersperse example code/results or refer to it from earlier. "
       ]
     }
   ]
