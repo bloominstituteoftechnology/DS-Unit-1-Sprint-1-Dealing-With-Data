@@ -1,2 +1,2 @@
-# DS-Unit-1-Sprint-1-Dealing-With-Data
-Notebooks, assignments, and sprint challenge for Data Science Unit 1 Sprint 1
+David Hang LS_DS_112_Loading_Data_Assignment-turnIn.ipynb
+did whole assignment. Rename orignal file to add turnIn
