@@ -1,0 +1,1821 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Copy of LS_DSPT3_111_A_First_Look_at_Data.ipynb",
+      "version": "0.3.2",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/GitPheobe/DS-Unit-1-Sprint-1-Dealing-With-Data/blob/master/DSPT3-Unit-1-Sprint-1-Dealing-With-Data/_A_First_Look_at_Data\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Okfr_uhwhS1X",
+        "colab_type": "text"
+      },
+      "source": [
+        "# Lambda School Data Science - A First Look at Data\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "9dtJETFRhnOG",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Lecture - let's explore Python DS libraries and examples!\n",
+        "\n",
+        "The Python Data Science ecosystem is huge. You've seen some of the big pieces - pandas, scikit-learn, matplotlib. What parts do you want to see more of?"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "WiBkgmPJhmhE",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import numpy as np\n"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "TGUS79cOhPWj",
+        "colab_type": "code",
+        "outputId": "102ff3e4-ff38-4c26-a746-bff57f628ec9",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "np.random.randint(0, 10, size=10)\n"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([6, 4, 7, 9, 7, 2, 4, 9, 9, 8])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 6
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "PTWwm8g0zKsM",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import matpltotlib.pyplot as plt\n"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "jSaXWRX7zc_b",
+        "colab_type": "code",
+        "outputId": "d143ddc9-da59-41ff-9062-7ad822e7653d",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "x = [1, 2, 3, 4]\n",
+        "y = [2, 4, 6, 10]\n",
+        "print(x, y)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[1, 2, 3, 4] [2, 4, 6, 10]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "FIleWYdrz3p1",
+        "colab_type": "code",
+        "outputId": "2e650f4c-9256-400d-9500-d5d94f0a5707",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 286
+        }
+      },
+      "source": [
+        "plt.scatter(x, y)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "<matplotlib.collections.PathCollection at 0x7efe589d5828>"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 8
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "image/png": "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\n",
+            "text/plain": [
+              "<Figure size 432x288 with 1 Axes>"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Tr56zTV70h92",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "vLjBtQKH0GdW",
+        "colab_type": "code",
+        "outputId": "e048fef1-c080-4cc9-d043-f7293ba36a1a",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 286
+        }
+      },
+      "source": [
+        "plt.plot(x, y, color = 'k')"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[<matplotlib.lines.Line2D at 0x7efe55e541d0>]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 11
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "image/png": "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\nhc0AAAAASUVORK5CYII=\n",
+            "text/plain": [
+              "<Figure size 432x288 with 1 Axes>"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "C7x8AMc10lC3",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import pandas as pd\n"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Up7o_19c0tci",
+        "colab_type": "code",
+        "outputId": "4c7bcbe9-c71a-45b0-d57c-847f7e2d6881",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 173
+        }
+      },
+      "source": [
+        "df = pd.DataFrame({'first_col': x, \"second_col\": y})\n",
+        "df "
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>first_col</th>\n",
+              "      <th>second_col</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>2</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>4</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>6</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>10</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   first_col  second_col\n",
+              "0          1           2\n",
+              "1          2           4\n",
+              "2          3           6\n",
+              "3          4          10"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 24
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "dVY2dvsc1wrT",
+        "colab_type": "code",
+        "outputId": "5cb8aa0f-63f3-4558-88d4-2ac0d9a42bf5",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 102
+        }
+      },
+      "source": [
+        "df['first_col']"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0    1\n",
+              "1    2\n",
+              "2    3\n",
+              "3    4\n",
+              "Name: first_col, dtype: int64"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 25
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "aHCr64kg3KK6",
+        "colab_type": "code",
+        "outputId": "9ec81870-a0df-4225-f57b-a310a2bbcf2d",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "df.shape"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(4, 2)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 26
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "cYVPrSOC3Pj9",
+        "colab_type": "code",
+        "outputId": "a9619b20-1b96-4162-91a8-b53ac34d4036",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 173
+        }
+      },
+      "source": [
+        "df['third_col'] = df['first_col'] + 2*df['second_col']\n",
+        "df"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>first_col</th>\n",
+              "      <th>second_col</th>\n",
+              "      <th>third_col</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>2</td>\n",
+              "      <td>5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>4</td>\n",
+              "      <td>10</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>6</td>\n",
+              "      <td>15</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>10</td>\n",
+              "      <td>24</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   first_col  second_col  third_col\n",
+              "0          1           2          5\n",
+              "1          2           4         10\n",
+              "2          3           6         15\n",
+              "3          4          10         24"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 28
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "AXmqYI4t3yam",
+        "colab_type": "code",
+        "outputId": "5a080cce-a7a4-4558-9cbe-2d73802cc016",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "df.shape"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(4, 3)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 29
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rUxw6pdy4RT9",
+        "colab_type": "code",
+        "outputId": "099d8381-8417-4af6-9b72-1ce9acbbe33d",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "arr_1 = np.random.randint(low=0, high=100, size=10000)\n",
+        "arr_2 = np.random.randint(low=0, high=100, size=10000)\n",
+        "arr_1.shape"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(10000,)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 32
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "uABeHnXU4tFB",
+        "colab_type": "code",
+        "outputId": "a3459e4b-a2c9-46aa-aaaf-869255909afb",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "arr_2.shape"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(10000,)"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 33
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "co476Lzy5INb",
+        "colab_type": "code",
+        "outputId": "3e5945a8-3679-4ae3-c720-39e45eec12f3",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "arr_1 + arr_2"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([107, 186,  89, ...,  85, 129, 114])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 34
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "EW22wcfM5SLy",
+        "colab_type": "code",
+        "outputId": "6eadea8c-1a96-434e-ad0a-c5d89a196072",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "x + y"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 2, 3, 4, 2, 4, 6, 10]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 35
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "VkktsI7S6Z7K",
+        "colab_type": "code",
+        "outputId": "e37345d7-02c5-4515-9d0b-9590d6dec747",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "type(arr_1)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "numpy.ndarray"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 36
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "QDkZ3bfN6ejA",
+        "colab_type": "code",
+        "outputId": "84769fe4-c30e-487f-930e-87bb301a9b67",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "type(x)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "list"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 37
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "fLz2_ibN7CCU",
+        "colab_type": "code",
+        "outputId": "f2939477-5e4d-4f13-c726-c514ab4bfcab",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 173
+        }
+      },
+      "source": [
+        "df"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>first_col</th>\n",
+              "      <th>second_col</th>\n",
+              "      <th>third_col</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>2</td>\n",
+              "      <td>5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>4</td>\n",
+              "      <td>10</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>6</td>\n",
+              "      <td>15</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>10</td>\n",
+              "      <td>24</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   first_col  second_col  third_col\n",
+              "0          1           2          5\n",
+              "1          2           4         10\n",
+              "2          3           6         15\n",
+              "3          4          10         24"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 38
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "WrYwfsE27Kng",
+        "colab_type": "code",
+        "outputId": "c1f3da85-e95b-4787-86cc-c4c1409b1775",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 173
+        }
+      },
+      "source": [
+        "df['forth_col'] = df['third_col'] > 10\n",
+        "df"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>first_col</th>\n",
+              "      <th>second_col</th>\n",
+              "      <th>third_col</th>\n",
+              "      <th>forth_col</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>2</td>\n",
+              "      <td>5</td>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>4</td>\n",
+              "      <td>10</td>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>6</td>\n",
+              "      <td>15</td>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>4</td>\n",
+              "      <td>10</td>\n",
+              "      <td>24</td>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   first_col  second_col  third_col  forth_col\n",
+              "0          1           2          5      False\n",
+              "1          2           4         10      False\n",
+              "2          3           6         15       True\n",
+              "3          4          10         24       True"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 40
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Z8iRaei97eD5",
+        "colab_type": "code",
+        "outputId": "b0ea01cc-4ef8-4142-83e8-0418b87dc638",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 102
+        }
+      },
+      "source": [
+        "df['second_col'] < 10"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0     True\n",
+              "1     True\n",
+              "2     True\n",
+              "3    False\n",
+              "Name: second_col, dtype: bool"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 42
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "eZNRg6Pa71Ij",
+        "colab_type": "code",
+        "outputId": "48fa0327-cffb-4328-a645-210f08f66ad7",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 142
+        }
+      },
+      "source": [
+        "df[df['second_col'] < 10]"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>first_col</th>\n",
+              "      <th>second_col</th>\n",
+              "      <th>third_col</th>\n",
+              "      <th>forth_col</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>1</td>\n",
+              "      <td>2</td>\n",
+              "      <td>5</td>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2</td>\n",
+              "      <td>4</td>\n",
+              "      <td>10</td>\n",
+              "      <td>False</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>3</td>\n",
+              "      <td>6</td>\n",
+              "      <td>15</td>\n",
+              "      <td>True</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "   first_col  second_col  third_col  forth_col\n",
+              "0          1           2          5      False\n",
+              "1          2           4         10      False\n",
+              "2          3           6         15       True"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 44
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "HJA1UwoK70xE",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "lOqaPds9huME",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Assignment - now it's your turn\n",
+        "\n",
+        "Pick at least one Python DS library, and using documentation/examples reproduce in this notebook something cool. It's OK if you don't fully understand it or get it 100% working, but do put in effort and look things up."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "jWOhevjUB9ap",
+        "colab_type": "code",
+        "outputId": "bdbd35fa-4f86-4b1b-f8ab-df50d051a226",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        }
+      },
+      "source": [
+        "import numpy as np\n",
+        "np.random.randint(low=0, high=20, size=20)"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([12,  1, 10, 11,  1, 12,  0, 11,  1, 11,  6, 15, 14,  5, 13, 18,  0,\n",
+              "        7,  5,  0])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 45
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "c12EsKtCCikj",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "import matplotlib.pyplot as plt \n",
+        "\n",
+        "a = [.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10]\n",
+        "b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,20]"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ZeD3qMHKCisq",
+        "colab_type": "code",
+        "outputId": "c24c23a3-1b74-4f6d-ed87-c7cc8f2c2d93",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 286
+        }
+      },
+      "source": [
+        "plt.scatter(a, b, color='k')"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "<matplotlib.collections.PathCollection at 0x7efe54772a58>"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 58
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "image/png": "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\n",
+            "text/plain": [
+              "<Figure size 432x288 with 1 Axes>"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "0qmPVHj7Iudg",
+        "colab_type": "code",
+        "outputId": "472082d8-ec96-4815-d1c1-6b62378b3170",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 286
+        }
+      },
+      "source": [
+        "plt.plot(a, b, color='r')"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[<matplotlib.lines.Line2D at 0x7efe5474dc88>]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 59
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "image/png": "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\n",
+            "text/plain": [
+              "<Figure size 432x288 with 1 Axes>"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          }
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "yvPb-nW5I2Yg",
+        "colab_type": "code",
+        "outputId": "1d1e7e66-77bc-400f-8148-e52b195037a3",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 669
+        }
+      },
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "df1 = pd.DataFrame({'first_col': a, 'second_col': b,})\n",
+        "df1"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>first_col</th>\n",
+              "      <th>second_col</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>0.5</td>\n",
+              "      <td>1</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>1.0</td>\n",
+              "      <td>2</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>1.5</td>\n",
+              "      <td>3</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>2.0</td>\n",
+              "      <td>4</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>2.5</td>\n",
+              "      <td>5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>5</th>\n",
+              "      <td>3.0</td>\n",
+              "      <td>6</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>6</th>\n",
+              "      <td>3.5</td>\n",
+              "      <td>7</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>7</th>\n",
+              "      <td>4.0</td>\n",
+              "      <td>8</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>8</th>\n",
+              "      <td>4.5</td>\n",
+              "      <td>9</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>9</th>\n",
+              "      <td>5.0</td>\n",
+              "      <td>10</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>10</th>\n",
+              "      <td>5.5</td>\n",
+              "      <td>11</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>11</th>\n",
+              "      <td>6.0</td>\n",
+              "      <td>12</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>12</th>\n",
+              "      <td>6.5</td>\n",
+              "      <td>13</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>13</th>\n",
+              "      <td>7.0</td>\n",
+              "      <td>14</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>14</th>\n",
+              "      <td>7.5</td>\n",
+              "      <td>15</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>15</th>\n",
+              "      <td>8.0</td>\n",
+              "      <td>16</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>16</th>\n",
+              "      <td>8.5</td>\n",
+              "      <td>17</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>17</th>\n",
+              "      <td>9.0</td>\n",
+              "      <td>18</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>18</th>\n",
+              "      <td>9.5</td>\n",
+              "      <td>19</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>19</th>\n",
+              "      <td>10.0</td>\n",
+              "      <td>20</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    first_col  second_col\n",
+              "0         0.5           1\n",
+              "1         1.0           2\n",
+              "2         1.5           3\n",
+              "3         2.0           4\n",
+              "4         2.5           5\n",
+              "5         3.0           6\n",
+              "6         3.5           7\n",
+              "7         4.0           8\n",
+              "8         4.5           9\n",
+              "9         5.0          10\n",
+              "10        5.5          11\n",
+              "11        6.0          12\n",
+              "12        6.5          13\n",
+              "13        7.0          14\n",
+              "14        7.5          15\n",
+              "15        8.0          16\n",
+              "16        8.5          17\n",
+              "17        9.0          18\n",
+              "18        9.5          19\n",
+              "19       10.0          20"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 61
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "naKr1zgELdU3",
+        "colab_type": "code",
+        "outputId": "45ee2e66-7b87-41be-9d7a-318d567c538e",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 669
+        }
+      },
+      "source": [
+        "df1['third_col'] = 3*df1['first_col'] + 2*df1['second_col']\n",
+        "df1"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>first_col</th>\n",
+              "      <th>second_col</th>\n",
+              "      <th>third_col</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>0.5</td>\n",
+              "      <td>1</td>\n",
+              "      <td>3.5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>1.0</td>\n",
+              "      <td>2</td>\n",
+              "      <td>7.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>1.5</td>\n",
+              "      <td>3</td>\n",
+              "      <td>10.5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>2.0</td>\n",
+              "      <td>4</td>\n",
+              "      <td>14.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>2.5</td>\n",
+              "      <td>5</td>\n",
+              "      <td>17.5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>5</th>\n",
+              "      <td>3.0</td>\n",
+              "      <td>6</td>\n",
+              "      <td>21.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>6</th>\n",
+              "      <td>3.5</td>\n",
+              "      <td>7</td>\n",
+              "      <td>24.5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>7</th>\n",
+              "      <td>4.0</td>\n",
+              "      <td>8</td>\n",
+              "      <td>28.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>8</th>\n",
+              "      <td>4.5</td>\n",
+              "      <td>9</td>\n",
+              "      <td>31.5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>9</th>\n",
+              "      <td>5.0</td>\n",
+              "      <td>10</td>\n",
+              "      <td>35.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>10</th>\n",
+              "      <td>5.5</td>\n",
+              "      <td>11</td>\n",
+              "      <td>38.5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>11</th>\n",
+              "      <td>6.0</td>\n",
+              "      <td>12</td>\n",
+              "      <td>42.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>12</th>\n",
+              "      <td>6.5</td>\n",
+              "      <td>13</td>\n",
+              "      <td>45.5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>13</th>\n",
+              "      <td>7.0</td>\n",
+              "      <td>14</td>\n",
+              "      <td>49.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>14</th>\n",
+              "      <td>7.5</td>\n",
+              "      <td>15</td>\n",
+              "      <td>52.5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>15</th>\n",
+              "      <td>8.0</td>\n",
+              "      <td>16</td>\n",
+              "      <td>56.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>16</th>\n",
+              "      <td>8.5</td>\n",
+              "      <td>17</td>\n",
+              "      <td>59.5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>17</th>\n",
+              "      <td>9.0</td>\n",
+              "      <td>18</td>\n",
+              "      <td>63.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>18</th>\n",
+              "      <td>9.5</td>\n",
+              "      <td>19</td>\n",
+              "      <td>66.5</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>19</th>\n",
+              "      <td>10.0</td>\n",
+              "      <td>20</td>\n",
+              "      <td>70.0</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    first_col  second_col  third_col\n",
+              "0         0.5           1        3.5\n",
+              "1         1.0           2        7.0\n",
+              "2         1.5           3       10.5\n",
+              "3         2.0           4       14.0\n",
+              "4         2.5           5       17.5\n",
+              "5         3.0           6       21.0\n",
+              "6         3.5           7       24.5\n",
+              "7         4.0           8       28.0\n",
+              "8         4.5           9       31.5\n",
+              "9         5.0          10       35.0\n",
+              "10        5.5          11       38.5\n",
+              "11        6.0          12       42.0\n",
+              "12        6.5          13       45.5\n",
+              "13        7.0          14       49.0\n",
+              "14        7.5          15       52.5\n",
+              "15        8.0          16       56.0\n",
+              "16        8.5          17       59.5\n",
+              "17        9.0          18       63.0\n",
+              "18        9.5          19       66.5\n",
+              "19       10.0          20       70.0"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 62
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "K_OCyk43MF-m",
+        "colab_type": "code",
+        "outputId": "74085039-46ab-4059-d555-8e284640c9a9",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 669
+        }
+      },
+      "source": [
+        "df1['forth_col'] = 3*df1['first_col']\n",
+        "df1['fifth_col'] = 3*df1['second_col']\n",
+        "df1"
+      ],
+      "execution_count": 0,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>first_col</th>\n",
+              "      <th>second_col</th>\n",
+              "      <th>third_col</th>\n",
+              "      <th>forth_col</th>\n",
+              "      <th>fifth_col</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>0.5</td>\n",
+              "      <td>1</td>\n",
+              "      <td>3.5</td>\n",
+              "      <td>1.5</td>\n",
+              "      <td>3</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>1.0</td>\n",
+              "      <td>2</td>\n",
+              "      <td>7.0</td>\n",
+              "      <td>3.0</td>\n",
+              "      <td>6</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>1.5</td>\n",
+              "      <td>3</td>\n",
+              "      <td>10.5</td>\n",
+              "      <td>4.5</td>\n",
+              "      <td>9</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>2.0</td>\n",
+              "      <td>4</td>\n",
+              "      <td>14.0</td>\n",
+              "      <td>6.0</td>\n",
+              "      <td>12</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>2.5</td>\n",
+              "      <td>5</td>\n",
+              "      <td>17.5</td>\n",
+              "      <td>7.5</td>\n",
+              "      <td>15</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>5</th>\n",
+              "      <td>3.0</td>\n",
+              "      <td>6</td>\n",
+              "      <td>21.0</td>\n",
+              "      <td>9.0</td>\n",
+              "      <td>18</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>6</th>\n",
+              "      <td>3.5</td>\n",
+              "      <td>7</td>\n",
+              "      <td>24.5</td>\n",
+              "      <td>10.5</td>\n",
+              "      <td>21</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>7</th>\n",
+              "      <td>4.0</td>\n",
+              "      <td>8</td>\n",
+              "      <td>28.0</td>\n",
+              "      <td>12.0</td>\n",
+              "      <td>24</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>8</th>\n",
+              "      <td>4.5</td>\n",
+              "      <td>9</td>\n",
+              "      <td>31.5</td>\n",
+              "      <td>13.5</td>\n",
+              "      <td>27</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>9</th>\n",
+              "      <td>5.0</td>\n",
+              "      <td>10</td>\n",
+              "      <td>35.0</td>\n",
+              "      <td>15.0</td>\n",
+              "      <td>30</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>10</th>\n",
+              "      <td>5.5</td>\n",
+              "      <td>11</td>\n",
+              "      <td>38.5</td>\n",
+              "      <td>16.5</td>\n",
+              "      <td>33</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>11</th>\n",
+              "      <td>6.0</td>\n",
+              "      <td>12</td>\n",
+              "      <td>42.0</td>\n",
+              "      <td>18.0</td>\n",
+              "      <td>36</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>12</th>\n",
+              "      <td>6.5</td>\n",
+              "      <td>13</td>\n",
+              "      <td>45.5</td>\n",
+              "      <td>19.5</td>\n",
+              "      <td>39</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>13</th>\n",
+              "      <td>7.0</td>\n",
+              "      <td>14</td>\n",
+              "      <td>49.0</td>\n",
+              "      <td>21.0</td>\n",
+              "      <td>42</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>14</th>\n",
+              "      <td>7.5</td>\n",
+              "      <td>15</td>\n",
+              "      <td>52.5</td>\n",
+              "      <td>22.5</td>\n",
+              "      <td>45</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>15</th>\n",
+              "      <td>8.0</td>\n",
+              "      <td>16</td>\n",
+              "      <td>56.0</td>\n",
+              "      <td>24.0</td>\n",
+              "      <td>48</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>16</th>\n",
+              "      <td>8.5</td>\n",
+              "      <td>17</td>\n",
+              "      <td>59.5</td>\n",
+              "      <td>25.5</td>\n",
+              "      <td>51</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>17</th>\n",
+              "      <td>9.0</td>\n",
+              "      <td>18</td>\n",
+              "      <td>63.0</td>\n",
+              "      <td>27.0</td>\n",
+              "      <td>54</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>18</th>\n",
+              "      <td>9.5</td>\n",
+              "      <td>19</td>\n",
+              "      <td>66.5</td>\n",
+              "      <td>28.5</td>\n",
+              "      <td>57</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>19</th>\n",
+              "      <td>10.0</td>\n",
+              "      <td>20</td>\n",
+              "      <td>70.0</td>\n",
+              "      <td>30.0</td>\n",
+              "      <td>60</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    first_col  second_col  third_col  forth_col  fifth_col\n",
+              "0         0.5           1        3.5        1.5          3\n",
+              "1         1.0           2        7.0        3.0          6\n",
+              "2         1.5           3       10.5        4.5          9\n",
+              "3         2.0           4       14.0        6.0         12\n",
+              "4         2.5           5       17.5        7.5         15\n",
+              "5         3.0           6       21.0        9.0         18\n",
+              "6         3.5           7       24.5       10.5         21\n",
+              "7         4.0           8       28.0       12.0         24\n",
+              "8         4.5           9       31.5       13.5         27\n",
+              "9         5.0          10       35.0       15.0         30\n",
+              "10        5.5          11       38.5       16.5         33\n",
+              "11        6.0          12       42.0       18.0         36\n",
+              "12        6.5          13       45.5       19.5         39\n",
+              "13        7.0          14       49.0       21.0         42\n",
+              "14        7.5          15       52.5       22.5         45\n",
+              "15        8.0          16       56.0       24.0         48\n",
+              "16        8.5          17       59.5       25.5         51\n",
+              "17        9.0          18       63.0       27.0         54\n",
+              "18        9.5          19       66.5       28.5         57\n",
+              "19       10.0          20       70.0       30.0         60"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 64
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "BT9gdS7viJZa",
+        "colab_type": "text"
+      },
+      "source": [
+        "### Assignment questions\n",
+        "\n",
+        "After you've worked on some code, answer the following questions in this text block:\n",
+        "\n",
+        "1.  Describe in a paragraph of text what you did and why, as if you were writing an email to somebody interested but nontechnical.\n",
+        "  \n",
+        "  I started by creating a random set of twenty numbers using the randint function to get more familiar with how to use it. After that I created two lists each with twenty numbers called 'a' and 'b', then created two plots from said lists. I then added more columns to the dataframe that list 'a' and 'b' originated from.\n",
+        "  \n",
+        "2.  What was the most challenging part of what you did? \n",
+        "    \n",
+        "    The process of making new columns in a dataframe proved to be difficult, I enjoyed the challenge. Although, I could use some more practice on creating them.\n",
+        "    \n",
+        "3.  What was the most interesting thing you learned?\n",
+        "    \n",
+        "    The process of making new columns in a dataframe interested me the most because of all the ways you can make new data through that column.\n",
+        "\n",
+        "4.  What area would you like to explore with more time?\n",
+        "    \n",
+        "    Plotting data from a dataframe is something I would like to explore more. "
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_XXg2crAipwP",
+        "colab_type": "text"
+      },
+      "source": [
+        "## Stretch goals and resources\n",
+        "\n",
+        "Following are *optional* things for you to take a look at. Focus on the above assignment first, and make sure to commit and push your changes to GitHub (and since this is the first assignment of the sprint, open a PR as well).\n",
+        "\n",
+        "- [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/)\n",
+        "- [scikit-learn documentation](http://scikit-learn.org/stable/documentation.html)\n",
+        "- [matplotlib documentation](https://matplotlib.org/contents.html)\n",
+        "- [Awesome Data Science](https://github.com/bulutyazilim/awesome-datascience) - a list of many types of DS resources\n",
+        "\n",
+        "Stretch goals:\n",
+        "\n",
+        "- Find and read blogs, walkthroughs, and other examples of people working through cool things with data science - and share with your classmates!\n",
+        "- Write a blog post (Medium is a popular place to publish) introducing yourself as somebody learning data science, and talking about what you've learned already and what you're excited to learn more about."
+      ]
+    }
+  ]
+}
