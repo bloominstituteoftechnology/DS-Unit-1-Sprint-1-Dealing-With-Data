@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+module2-loadingdata/flag.names
+module2-loadingdata/flag.csv
+module2-loadingdata/LS_DS_112_Loading_Data_Assignment.ipynb
+module2-loadingdata/LS_DS_112_Loading_Data.py
