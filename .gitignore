@@ -102,3 +102,13 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+.DS_Store
+
+# Datasets
+module2-loadingdata/processed.cleveland.data
+module2-loadingdata/processed.cleveland_wget.data
+module3-databackedassertions/crime_csv_all_years (1).zip
+module3-databackedassertions/crime_csv_all_years.csv
+module3-databackedassertions/crime_csv_all_years.zip
+module3-databackedassertions/legal_disclaimer.txt
